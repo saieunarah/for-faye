@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>For you, baby</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Indie+Flower&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      background: #fff8f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Indie Flower', cursive;
+      color: #4b2e2e;
+      user-select: none;
+    }
+
+    .container {
+      background: #fffdf8;
+      max-width: 600px;
+      width: 90vw;
+      padding: 40px 35px 50px 35px;
+      border-radius: 20px;
+      box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.1),
+        inset 0 0 30px #f2e7e1;
+      position: relative;
+      font-size: 1.3rem;
+      line-height: 1.6;
+      color: #5a3a3a;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      font-style: normal;
+      transition: opacity 0.6s ease;
+      min-height: 320px;
+      max-height: 520px;
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.2rem;
+      margin: 0 0 0.3em 0;
+      color: #b55353;
+      user-select: text;
+    }
+
+    p {
+      margin: 0 0 1.3em 0;
+      user-select: text;
+    }
+
+    .btn {
+      background-color: #b55353;
+      color: #fff8f5;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 30px;
+      font-family: 'Indie Flower', cursive;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(181, 83, 83, 0.4);
+      transition: background-color 0.3s ease, transform 0.15s ease;
+      user-select: none;
+      margin: 15px 10px 0 10px;
+      outline-offset: 2px;
+      min-width: 100px;
+    }
+    .btn:hover {
+      background-color: #8e3f3f;
+      transform: scale(1.05);
+    }
+    .btn:active {
+      transform: scale(0.95);
+    }
+
+    .hidden-message {
+      margin-top: 25px;
+      color: #b55353;
+      font-size: 1.15rem;
+      font-weight: 600;
+      user-select: text;
+      animation: fadeIn 0.7s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .container::-webkit-scrollbar {
+      width: 8px;
+    }
+    .container::-webkit-scrollbar-thumb {
+      background: #b55353;
+      border-radius: 4px;
+    }
+    .container::-webkit-scrollbar-track {
+      background: #fff8f5;
+    }
+
+    .nav-buttons {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        font-size: 1.1rem;
+        padding: 30px 20px 40px 20px;
+        max-height: 480px;
+      }
+      h1 {
+        font-size: 2.6rem;
+      }
+      .btn {
+        font-size: 1rem;
+        padding: 10px 26px;
+        min-width: 80px;
+        margin: 10px 8px 0 8px;
+      }
+      #surpriseBtn {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 20px;
+      }
+      #photoPage img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(181, 83, 83, 0.3);
+      }
+    }
+
+    #photoPage {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="container">
+    <!-- Pages -->
+    <div class="page" id="page0">
+      <h1>My Dearest, Faye</h1>
+      <p>I want to make sure that this experience is as enjoyable as possible for you, so I'll make sure to be extra cautious with my actions. All I know is being with you is my happiness, to be cherished by you is everything to me. You matter more to me than you can ever imagine. You are the one I love and that's enough to hold on to, I'll gladly stay with you.</p>
+      <p>I don't want you to ever feel like I can't keep you feel secure about our relationship. I'm willing to do anything for you, to be deserving of your love.</p>
+      
+      <p>Thank you for being my best friend, my partner, and my everything.</p>
+      <div class="nav-buttons">
+        <button class="btn" id="next0">Next</button>
+      </div>
+    </div>
+
+    <div class="page" id="page1" style="display:none;">
+      
+      <p>baby, I'm so sorry if I upset you, I didn't mean to. I promise you that I won't mention anything regarding my past anymore . It won't happen again. I feel bad whenever I upset you. I know it bothers you, and I'm not afraid to admit or acknowledge my mistakes. So here I am, willing to make it up to you. </p>
+      <p>I'll learn from them and be better because you're the only one I'd rather be with, and I can't stand being away from you.</p>
+      <div class="nav-buttons">
+        <button class="btn" id="back1">Back</button>
+        <button class="btn" id="next1">Next</button>
+      </div>
+    </div>
+
+    <div class="page" id="page2" style="display:none;">
+      <h1>Forever Yours</h1>
+      <p>With all my heart, I pinky promise to stand by your side through everything.</p>
+      <p>Just the two of us, forever.</p>
+
+      <button class="btn" id="surpriseBtn" onclick="toggleMessage()">
+        :D
+      </button>
+
+      <div class="hidden-message" id="surpriseMessage" style="display:none; user-select: text;">
+        <p>
+        You're not here yet your concept of love stay within me,</p>
+I thank god I can love you freely, </p>
+I'll embrace you wholeheartedly. </p> Dedicated myself to you wholly, </p>
+to cherish and love you faithfully. 
+        <br />
+        <button class="btn" style="margin-top:12px;" onclick="toggleMessage()">Close</button>
+      </div>
+
+      <div class="nav-buttons">
+        <button class="btn" id="back2">Back</button>
+        <button class="btn" id="next2">Next</button>
+      </div>
+    </div>
+
+    <div class="page" id="page3" style="display:none;">
+      <h1>^_^</h1>
+      <p>I love you with all that  I am.</p>
+      <div id="photoPage">
+        <!-- Replace the src below with your photo filename or URL -->
+        <img src="love.jpg" alt="^_^" />
+        <p>You're such a sweetheart, baby </p>
+      </div>
+      <div class="nav-buttons">
+        <button class="btn" id="back3">Back</button>
+        <button class="btn" id="next3">Home</button>
+      </div>
+    </div>
+  </div>
+
+  <audio id="bgMusic" autoplay loop>
+    <source src="ehwy.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const pages = [
+      document.getElementById('page0'),
+      document.getElementById('page1'),
+      document.getElementById('page2'),
+      document.getElementById('page3'),
+    ];
+    const surpriseBtn = document.getElementById('surpriseBtn');
+    const surpriseMessage = document.getElementById('surpriseMessage');
+    const container = document.getElementById('container');
+    const bgMusic = document.getElementById('bgMusic');
+
+    let currentPage = 0;
+    let animating = false;
+
+    function showPage(newPage) {
+      if (animating || newPage === currentPage || newPage < 0 || newPage >= pages.length) return;
+
+      animating = true;
+      container.classList.add('fade-out');
+
+      setTimeout(() => {
+        pages[currentPage].style.display = 'none';
+        surpriseMessage.style.display = 'none';
+
+        pages[newPage].style.display = 'block';
+        currentPage = newPage;
+
+        // Show or hide surprise button
+        if (currentPage === 2) {
+          surpriseBtn.style.display = 'inline-block';
+        } else {
+          surpriseBtn.style.display = 'none';
+        }
+
+        container.classList.remove('fade-out');
+        animating = false;
+      }, 600);
+    }
+
+    // Navigation button event handlers
+    document.getElementById('next0').addEventListener('click', () => showPage(1));
+    document.getElementById('back1').addEventListener('click', () => showPage(0));
+    document.getElementById('next1').addEventListener('click', () => showPage(2));
+    document.getElementById('back2').addEventListener('click', () => showPage(1));
+    document.getElementById('next2').addEventListener('click', () => showPage(3));
+    document.getElementById('back3').addEventListener('click', () => showPage(2));
+    document.getElementById('next3').addEventListener('click', () => showPage(0)); // Loop back to first page
+
+    function toggleMessage() {
+      if (surpriseMessage.style.display === 'block') {
+        surpriseMessage.style.display = 'none';
+      } else {
+        surpriseMessage.style.display = 'block';
+      }
+    }
+
+    bgMusic.play().catch(() => {
+      function playOnInteraction() {
+        bgMusic.play();
+        window.removeEventListener('click', playOnInteraction);
+        window.removeEventListener('keydown', playOnInteraction);
+      }
+      window.addEventListener('click', playOnInteraction);
+      window.addEventListener('keydown', playOnInteraction);
+    });
+
+    surpriseBtn.style.display = 'none'; // Hide surprise button initially
+  </script>
+</body>
+</html>
